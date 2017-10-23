@@ -1,0 +1,702 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ gui-ufw (1:12.10.0-2) stretch; urgency=medium
+ .
+   * Build for separate procesors
+Author: anticapitalista <antix@operamail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2017-07-15
+
+--- gui-ufw-12.10.0.orig/po/gufw.pot
++++ gui-ufw-12.10.0/po/gufw.pot
+@@ -1,128 +1,141 @@
++# SOME DESCRIPTIVE TITLE.
++# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
++# This file is distributed under the same license as the PACKAGE package.
++# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
++#
+ #, fuzzy
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: PACKAGE VERSION\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2012-05-03 10:05+0200\n"
++"POT-Creation-Date: 2017-07-15 16:49+0100\n"
+ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: LANGUAGE <LL@li.org>\n"
++"Language: \n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+-"X-Launchpad-Export-Date: 2012-06-09 08:00+0000\n"
+-"X-Generator: Launchpad (build 15376)\n"
+-"Language: \n"
+ 
+-#: view/guiGufw.py:137
++#: ../gufw/daemon/gufw.daemon.policy.in.h:1
++msgid "Manage firewall configuration"
++msgstr ""
++
++#: ../gufw/daemon/gufw.daemon.policy.in.h:2
++msgid "You need to authenticate to modify the firewall configuration."
++msgstr ""
++
++#: ../gufw/view/guiGufw.py:137
+ msgid "To"
+ msgstr ""
+ 
+-#: view/guiGufw.py:141
++#: ../gufw/view/guiGufw.py:141
+ msgid "Action"
+ msgstr ""
+ 
+-#: view/guiGufw.py:145
++#: ../gufw/view/guiGufw.py:145
+ msgid "From"
+ msgstr ""
+ 
+-#: view/guiGufw.py:156
++#: ../gufw/view/guiGufw.py:156
+ msgid "Protocol"
+ msgstr ""
+ 
+-#: view/guiGufw.py:159
++#: ../gufw/view/guiGufw.py:159
+ msgid "Port"
+ msgstr ""
+ 
+-#: view/guiGufw.py:162
++#: ../gufw/view/guiGufw.py:162
+ msgid "Address"
+ msgstr ""
+ 
+-#: view/guiGufw.py:165
++#: ../gufw/view/guiGufw.py:165 ../data/ui/add.ui.h:13
+ msgid "Application"
+ msgstr ""
+ 
+-#: view/guiGufw.py:445
++#: ../gufw/view/guiGufw.py:445
+ msgid "Select rule(s)"
+ msgstr ""
+ 
+-#: view/guiGufw.py:460
++#: ../gufw/view/guiGufw.py:460
+ msgid "Removing rules..."
+ msgstr ""
+ 
+-#: view/guiGufw.py:488
++#: ../gufw/view/guiGufw.py:488
+ msgid "Rule(s) removed"
+ msgstr ""
+ 
+-#: view/guiGufw.py:490 view/guiGufw.py:567 view/guiGufw.py:605
+-#: view/guiGufw.py:670 view/guiGufw.py:731
++#: ../gufw/view/guiGufw.py:490 ../gufw/view/guiGufw.py:567
++#: ../gufw/view/guiGufw.py:605 ../gufw/view/guiGufw.py:670
++#: ../gufw/view/guiGufw.py:731
+ msgid "Error performing operation"
+ msgstr ""
+ 
+-#: view/guiGufw.py:565 view/guiGufw.py:603 view/guiGufw.py:668
+-#: view/guiGufw.py:729
++#: ../gufw/view/guiGufw.py:565 ../gufw/view/guiGufw.py:603
++#: ../gufw/view/guiGufw.py:668 ../gufw/view/guiGufw.py:729
+ msgid "Rule added"
+ msgstr ""
+ 
+-#: view/guiGufw.py:658
++#: ../gufw/view/guiGufw.py:658
+ msgid "Error: Insert a port number"
+ msgstr ""
+ 
+-#: view/guiGufw.py:662 view/guiGufw.py:720 view/guiGufw.py:724
++#: ../gufw/view/guiGufw.py:662 ../gufw/view/guiGufw.py:720
++#: ../gufw/view/guiGufw.py:724
+ msgid "Error: Range ports only with tcp or udp protocol"
+ msgstr ""
+ 
+-#: view/guiGufw.py:716
++#: ../gufw/view/guiGufw.py:716
+ msgid "Error: Fields filled out incorrectly"
+ msgstr ""
+ 
+-#: view/guiGufw.py:810
++#: ../gufw/view/guiGufw.py:810
+ msgid "Wrong identification"
+ msgstr ""
+ 
+-#: view/guiGufw.py:936
++#: ../gufw/view/guiGufw.py:936
+ msgid "Enabled firewall"
+ msgstr ""
+ 
+-#: view/guiGufw.py:941
++#: ../gufw/view/guiGufw.py:941
+ msgid "Disabled firewall"
+ msgstr ""
+ 
+-#: view/guiGufw.py:955
++#: ../gufw/view/guiGufw.py:955
+ msgid "Deny all INCOMING traffic"
+ msgstr ""
+ 
+-#: view/guiGufw.py:959
++#: ../gufw/view/guiGufw.py:959
+ msgid "Reject all INCOMING traffic"
+ msgstr ""
+ 
+-#: view/guiGufw.py:963
++#: ../gufw/view/guiGufw.py:963
+ msgid "Allow all INCOMING traffic"
+ msgstr ""
+ 
+-#: view/guiGufw.py:977
++#: ../gufw/view/guiGufw.py:977
+ msgid "Deny all OUTGOING traffic"
+ msgstr ""
+ 
+-#: view/guiGufw.py:981
++#: ../gufw/view/guiGufw.py:981
+ msgid "Reject all OUTGOING traffic"
+ msgstr ""
+ 
+-#: view/guiGufw.py:985
++#: ../gufw/view/guiGufw.py:985
+ msgid "Allow all OUTGOING traffic"
+ msgstr ""
+ 
+-#: view/guiGufw.py:1031
++#: ../gufw/view/guiGufw.py:1031
+ msgid ""
+ "© 2008-2012 The Gufw Project\n"
+ "Shield logo © 2007 Michael Spiegel"
+ msgstr ""
+ 
+-#: view/guiGufw.py:1032
++#: ../gufw/view/guiGufw.py:1032
+ msgid "Graphical user interface for ufw"
+ msgstr ""
+ 
+-#: view/guiGufw.py:1035
++#: ../gufw/view/guiGufw.py:1035
+ msgid ""
+ "Lead developer:\n"
+ "Marcos Alvarez Costales https://launchpad.net/~costales\n"
+@@ -144,281 +157,429 @@ msgid ""
+ "Devid Antonio Filoni https://launchpad.net/~d.filoni"
+ msgstr ""
+ 
+-#: view/guiGufw.py:1053
++#: ../gufw/view/guiGufw.py:1053
+ msgid "translator-credits"
+ msgstr ""
+ 
+-#: view/guiGufw.py:1054
++#: ../gufw/view/guiGufw.py:1054
+ msgid "Shield logo by myke http://michael.spiegel1.at/"
+ msgstr ""
+ 
+-#: view/guiGufw.py:1092
++#: ../gufw/view/guiGufw.py:1092
+ msgid "Reloaded ufw rules"
+ msgstr ""
+ 
+-#: view/guiGufw.py:1099
++#: ../gufw/view/guiGufw.py:1099
+ msgid "This will remove all rules and disable the firewall!"
+ msgstr ""
+ 
+-#: view/guiGufw.py:1100
++#: ../gufw/view/guiGufw.py:1100
+ msgid "Do you want to continue?"
+ msgstr ""
+ 
+-#: view/guiGufw.py:1101
++#: ../gufw/view/guiGufw.py:1101
+ msgid "Reset Firewall"
+ msgstr ""
+ 
+-#: view/guiGufw.py:1110
++#: ../gufw/view/guiGufw.py:1110
+ msgid "Removed rules and reset firewall!"
+ msgstr ""
+ 
+-#: view/guiGufw.py:1169 view/guiGufw.py:1171
++#: ../gufw/view/guiGufw.py:1169 ../gufw/view/guiGufw.py:1171
+ msgid " on "
+ msgstr ""
+ 
+-#: view/guiGufw.py:1201 ui/main.glade:71
++#: ../gufw/view/guiGufw.py:1201 ../data/ui/main.ui.h:1
+ msgid "Firewall"
+ msgstr ""
+ 
+-#: ui/add.glade:12
++#. Expired time notification blocked by bug #390508
++#: ../data/ui/add.ui.h:1
+ msgid "Firewall: Add Rule"
+ msgstr ""
+ 
+-#: ui/add.glade:28
++#: ../data/ui/add.ui.h:2
+ msgid "Show extended actions"
+ msgstr ""
+ 
+-#: ui/add.glade:130 ui/add.glade:131 ui/add.glade:423 ui/add.glade:424
+-#: ui/add.glade:690 ui/add.glade:691
++#: ../data/ui/add.ui.h:3
+ msgid "Rule number to insert"
+ msgstr ""
+ 
+-#: ui/add.glade:407
++#: ../data/ui/add.ui.h:4 ../data/ui/main.ui.h:26
++msgid "Allow"
++msgstr ""
++
++#: ../data/ui/add.ui.h:5 ../data/ui/main.ui.h:24
++msgid "Deny"
++msgstr ""
++
++#: ../data/ui/add.ui.h:6 ../data/ui/main.ui.h:25
++msgid "Reject"
++msgstr ""
++
++#: ../data/ui/add.ui.h:7
++msgid "Limit"
++msgstr ""
++
++#: ../data/ui/add.ui.h:8
++msgid "In"
++msgstr ""
++
++#: ../data/ui/add.ui.h:9
++msgid "Out"
++msgstr ""
++
++#: ../data/ui/add.ui.h:10
++msgid "Don't Log"
++msgstr ""
++
++#: ../data/ui/add.ui.h:11
++msgid "Log"
++msgstr ""
++
++#: ../data/ui/add.ui.h:12
++msgid "Log All"
++msgstr ""
++
++#: ../data/ui/add.ui.h:14
++msgid "Service"
++msgstr ""
++
++#: ../data/ui/add.ui.h:15
++msgid "Amule"
++msgstr ""
++
++#: ../data/ui/add.ui.h:16
++msgid "Deluge"
++msgstr ""
++
++#: ../data/ui/add.ui.h:17
++msgid "KTorrent"
++msgstr ""
++
++#: ../data/ui/add.ui.h:18
++msgid "Nicotine"
++msgstr ""
++
++#: ../data/ui/add.ui.h:19
++msgid "qBittorrent"
++msgstr ""
++
++#: ../data/ui/add.ui.h:20
++msgid "Skype"
++msgstr ""
++
++#: ../data/ui/add.ui.h:21
++msgid "Transmission"
++msgstr ""
++
++#: ../data/ui/add.ui.h:22
++msgid "Ubuntu One"
++msgstr ""
++
++#: ../data/ui/add.ui.h:23
++msgid "FTP"
++msgstr ""
++
++#: ../data/ui/add.ui.h:24
++msgid "HTTP"
++msgstr ""
++
++#: ../data/ui/add.ui.h:25
++msgid "HTTPS"
++msgstr ""
++
++#: ../data/ui/add.ui.h:26
++msgid "IMAP"
++msgstr ""
++
++#: ../data/ui/add.ui.h:27
++msgid "NFS"
++msgstr ""
++
++#: ../data/ui/add.ui.h:28
++msgid "POP3"
++msgstr ""
++
++#: ../data/ui/add.ui.h:29
++msgid "Samba"
++msgstr ""
++
++#: ../data/ui/add.ui.h:30
++msgid "SMTP"
++msgstr ""
++
++#: ../data/ui/add.ui.h:31
++msgid "SSH"
++msgstr ""
++
++#: ../data/ui/add.ui.h:32
++msgid "VNC"
++msgstr ""
++
++#: ../data/ui/add.ui.h:33
++msgid "CUPS"
++msgstr ""
++
++#: ../data/ui/add.ui.h:34
+ msgid "Preconfigured"
+ msgstr ""
+ 
+-#: ui/add.glade:673
++#: ../data/ui/add.ui.h:35
++msgid "TCP"
++msgstr ""
++
++#: ../data/ui/add.ui.h:36
++msgid "UDP"
++msgstr ""
++
++#: ../data/ui/add.ui.h:37
++msgid "Both"
++msgstr ""
++
++#: ../data/ui/add.ui.h:38
+ msgid "Simple"
+ msgstr ""
+ 
+-#: ui/add.glade:786
++#: ../data/ui/add.ui.h:39
+ msgid "To:"
+ msgstr ""
+ 
+-#: ui/add.glade:800
++#: ../data/ui/add.ui.h:40
+ msgid "From:"
+ msgstr ""
+ 
+-#: ui/add.glade:849 ui/add.glade:850 ui/add.glade:868 ui/add.glade:869
++#: ../data/ui/add.ui.h:41
+ msgid "Use PortA:PortB for a port range."
+ msgstr ""
+ 
+-#: ui/add.glade:888 ui/add.glade:889
++#: ../data/ui/add.ui.h:42
+ msgid "Clean values in boxes"
+ msgstr ""
+ 
+-#: ui/add.glade:1066
++#: ../data/ui/add.ui.h:43
+ msgid "Advanced"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:17
++#: ../data/ui/extra_translations_no_distribute.ui.h:1
+ msgid "ALLOW IN"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:24
++#: ../data/ui/extra_translations_no_distribute.ui.h:2
+ msgid "DENY IN"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:35
++#: ../data/ui/extra_translations_no_distribute.ui.h:3
+ msgid "REJECT IN"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:46
++#: ../data/ui/extra_translations_no_distribute.ui.h:4
+ msgid "LIMIT IN"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:57
++#: ../data/ui/extra_translations_no_distribute.ui.h:5
+ msgid "ALLOW OUT"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:68
++#: ../data/ui/extra_translations_no_distribute.ui.h:6
+ msgid "DENY OUT"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:81
++#: ../data/ui/extra_translations_no_distribute.ui.h:7
+ msgid "REJECT OUT"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:94
++#: ../data/ui/extra_translations_no_distribute.ui.h:8
+ msgid "LIMIT OUT"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:107
++#: ../data/ui/extra_translations_no_distribute.ui.h:9
+ msgid "ALLOW"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:118
++#: ../data/ui/extra_translations_no_distribute.ui.h:10
+ msgid "DENY"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:131
++#: ../data/ui/extra_translations_no_distribute.ui.h:11
+ msgid "REJECT"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:144
++#: ../data/ui/extra_translations_no_distribute.ui.h:12
+ msgid "LIMIT"
+ msgstr ""
+ 
+-#: ui/extra_translations_no_distribute.glade:160
++#: ../data/ui/extra_translations_no_distribute.ui.h:13
+ msgid "Anywhere"
+ msgstr ""
+ 
+-#: ui/log.glade:7
++#: ../data/ui/log.ui.h:1
+ msgid "Firewall: Log"
+ msgstr ""
+ 
+-#: ui/log.glade:25
++#: ../data/ui/log.ui.h:2
+ msgid "Show as server script"
+ msgstr ""
+ 
+-#: ui/log.glade:30
++#: ../data/ui/log.ui.h:3
+ msgid "Show in a simpler format that can be used for scripting"
+ msgstr ""
+ 
+-#: ui/log.glade:49
++#: ../data/ui/log.ui.h:4
+ msgid "Remove all Gufw logs"
+ msgstr ""
+ 
+-#: ui/main.glade:87
++#: ../data/ui/main.ui.h:2
+ msgid "_File"
+ msgstr ""
+ 
+-#: ui/main.glade:95
++#: ../data/ui/main.ui.h:3
+ msgid "_Log..."
+ msgstr ""
+ 
+-#: ui/main.glade:132
++#: ../data/ui/main.ui.h:4
+ msgid "_Edit"
+ msgstr ""
+ 
+-#: ui/main.glade:140
++#: ../data/ui/main.ui.h:5
+ msgid "_Add Rule..."
+ msgstr ""
+ 
+-#: ui/main.glade:153
++#: ../data/ui/main.ui.h:6
+ msgid "Re_move Rule"
+ msgstr ""
+ 
+-#: ui/main.glade:174
++#: ../data/ui/main.ui.h:7
+ msgid "Re_load Rules"
+ msgstr ""
+ 
+-#: ui/main.glade:188
++#: ../data/ui/main.ui.h:8
+ msgid "Re_set Firewall..."
+ msgstr ""
+ 
+-#: ui/main.glade:228
++#: ../data/ui/main.ui.h:9
+ msgid "_Help"
+ msgstr ""
+ 
+-#: ui/main.glade:236
++#: ../data/ui/main.ui.h:10
+ msgid "Documentation..."
+ msgstr ""
+ 
+-#: ui/main.glade:256
++#: ../data/ui/main.ui.h:11
+ msgid "Get Help Online..."
+ msgstr ""
+ 
+-#: ui/main.glade:268
++#: ../data/ui/main.ui.h:12
+ msgid "Report a Problem..."
+ msgstr ""
+ 
+-#: ui/main.glade:280
++#: ../data/ui/main.ui.h:13
+ msgid "Translate this Application..."
+ msgstr ""
+ 
+-#: ui/main.glade:401
++#: ../data/ui/main.ui.h:14
+ msgid "Add a rule..."
+ msgstr ""
+ 
+-#: ui/main.glade:403
++#: ../data/ui/main.ui.h:15
+ msgid "Add"
+ msgstr ""
+ 
+-#: ui/main.glade:419
++#: ../data/ui/main.ui.h:16
+ msgid "Remove the selected rule(s)"
+ msgstr ""
+ 
+-#: ui/main.glade:421
++#: ../data/ui/main.ui.h:17
+ msgid "Remove"
+ msgstr ""
+ 
+-#: ui/main.glade:458
++#: ../data/ui/main.ui.h:18
+ msgid "Unlock the firewall"
+ msgstr ""
+ 
+-#: ui/main.glade:472
++#: ../data/ui/main.ui.h:19
+ msgid "Unlock"
+ msgstr ""
+ 
+-#: ui/main.glade:504
++#: ../data/ui/main.ui.h:20
+ msgid "<b>Rules</b>"
+ msgstr ""
+ 
+-#: ui/main.glade:559
++#: ../data/ui/main.ui.h:21
+ msgid "<b>Listening Report</b>"
+ msgstr ""
+ 
+-#: ui/main.glade:601
++#: ../data/ui/main.ui.h:22
+ msgid "Outgoing:"
+ msgstr ""
+ 
+-#: ui/main.glade:615
++#: ../data/ui/main.ui.h:23
+ msgid "Incoming:"
+ msgstr ""
+ 
+-#: ui/main.glade:667
++#: ../data/ui/main.ui.h:27
+ msgid "Status"
+ msgstr ""
+ 
+-#: ui/main.glade:699
++#: ../data/ui/main.ui.h:28
+ msgid "<b>Firewall</b>"
+ msgstr ""
+ 
+-#: ui/preferences.glade:8
++#: ../data/ui/preferences.ui.h:1
+ msgid "Firewall: Preferences"
+ msgstr ""
+ 
+-#: ui/preferences.glade:74
++#: ../data/ui/preferences.ui.h:2
+ msgid "Logging:"
+ msgstr ""
+ 
+-#: ui/preferences.glade:132
++#: ../data/ui/preferences.ui.h:3
++msgid "Off"
++msgstr ""
++
++#: ../data/ui/preferences.ui.h:4
++msgid "Low"
++msgstr ""
++
++#: ../data/ui/preferences.ui.h:5
++msgid "Medium"
++msgstr ""
++
++#: ../data/ui/preferences.ui.h:6
++msgid "High"
++msgstr ""
++
++#: ../data/ui/preferences.ui.h:7
++msgid "Full"
++msgstr ""
++
++#: ../data/ui/preferences.ui.h:8
+ msgid "<b>ufw Options</b>"
+ msgstr ""
+ 
+-#: ui/preferences.glade:163
++#: ../data/ui/preferences.ui.h:9
+ msgid "Logging"
+ msgstr ""
+ 
+-#: ui/preferences.glade:181
++#: ../data/ui/preferences.ui.h:10
+ msgid "Listening Report"
+ msgstr ""
+ 
+-#: ui/preferences.glade:186
++#: ../data/ui/preferences.ui.h:11
+ msgid ""
+ "Ports in the listening state for TCP and open state for UDP.\n"
+ "If enabled, will result in higher CPU usage."
+ msgstr ""
+ 
+-#: ui/preferences.glade:202
++#: ../data/ui/preferences.ui.h:13
+ msgid "Show notifications"
+ msgstr ""
+ 
+-#: ui/preferences.glade:207
++#: ../data/ui/preferences.ui.h:14
+ msgid "Show notifications for new connections in Listening Report"
+ msgstr ""
+ 
+-#: ui/preferences.glade:246
++#: ../data/ui/preferences.ui.h:15
+ msgid "<b>Gufw Options</b>"
+ msgstr ""

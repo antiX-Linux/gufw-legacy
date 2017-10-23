@@ -1,0 +1,9 @@
+--- gui-ufw-12.10.0.orig/gufw.desktop.in
++++ gui-ufw-12.10.0/gufw.desktop.in
+@@ -73,5 +73,5 @@ Comment[ast]=Permite configurar el torna
+ Comment[ar]=يسٌمح لك بإعداد الجدار الناري UFW
+ Icon=gufw.png
+ Categories=System;Settings;X-GNOME-Settings-Panel;
+-OnlyShowIn=Unity;
++# OnlyShowIn=Unity;
+ X-GNOME-Settings-Panel=gufw.png

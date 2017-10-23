@@ -1,0 +1,17 @@
+Package: gufw-legacy
+Source: gui-ufw
+Version: 1:12.10.0-2
+Architecture: amd64
+Maintainer: Devid Antonio Filoni <d.filoni@ubuntu.com>
+Installed-Size: 890
+Depends: ufw (>= 0.31.1), gir1.2-gtk-3.0, gir1.2-polkit-1.0, notify-osd | notification-daemon, policykit-1, python-dbus, python-gobject, gnome-icon-theme-symbolic
+Conflicts: gufw
+Replaces: gufw
+Provides: gufw
+Section: admin
+Priority: optional
+Homepage: https://launchpad.net/gui-ufw
+Description: graphical user interface for ufw
+ gufw is an easy and intuitive way to manage your Linux firewall. It supports
+ common tasks such as allowing or blocking pre-configured, common p2p, or
+ individual port(s), and many others!
